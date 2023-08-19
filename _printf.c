@@ -18,7 +18,7 @@ int print_char(va_list types, char p_buff[], int flags, int width, int precision
 
 	c = va_arg(types, int);
 	p_buff[size] = c;
-	write(1, &c, 1;
+	write(1, &c, 1);
 
 	return (1);
 }
