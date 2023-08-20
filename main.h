@@ -1,28 +1,24 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
+#include <stddef.h>
 /**
- * struct format_handler - Struct for format specifier and handler
- * @fmt: The format specifier
- * @handler: a functions pointer , specifier handler
- */
-struct format_handler
+ * struct c_fmt - a structurer
+ * @s: the pointer to specifier
+ * @f: pointer to function
+*/
+typedef struct c_fmt
 {
-	char fmt;
-	int (*handler)(va_list, char[], int, int, int, int);
-};
-/**
- * typedef struct format_handler format_handler_t-Typedef struct format_handler
- */
-typedef struct format_handler format_handler_t;
+	char *s;
+	int(*f)(va_list);
+} cd_f;
+int _putchar(char a);
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i,
-va_list list, char p_buff[], int flags, int width, int precision, int size);
-int print_char(va_list types, char p_buff[],
-int flags, int width, int precision, int size);
-int print_string(va_list types, char p_buff[],
-int flags, int width, int precision, int size);
-int print_percent(va_list types, char p_buff[],
-int flags, int width, int precision, int size);
-void print_buffer(char p_buff[], int *buff_ind, int size);
+int p_char(va_list c);
+int p_str(va_list s);
+int p_int(va_list i);
+int p_decimal(va_list d);
 #endif
