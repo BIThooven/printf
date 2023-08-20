@@ -26,11 +26,11 @@ int p_int(va_list i)
 			num /= 10;
 			length++;
 		}
-		for (j = i; j <= length - i ; j++)
+		for (j = 1; j <= length; j++)
 		{
 			p *= 10;
 		}
-		for (j = i; j <= length; j++)
+		for (j = 1; j <= length; j++)
 		{
 			dgt = n / p;
 			if (n < 0)
